@@ -2,6 +2,7 @@
 
 
 1. Description:
+Bendahon - I forked this project just to make it super simple so i just have to run "up"
 
  Up is a tool that automates the update procedure for Debian and Ubuntu based
  Linux systems.
@@ -36,23 +37,10 @@
 
  Commands:
     up = full system update.
-    
-    Running "up" with no options will update the apt cache and then perform a
-    full distribution update automatically.
-
-    up --remove = full system update with orphaned packages removed.
-    up --clean = full system update with full cleanup.
-
-    Adding the "--clean" option will invoke the apt commands to search for and
-    remove locally cached packages that are no longer in the repositories and
-    remove orphaned packages that are no longer needed by programs. 
-
-    The "--remove" option only removes orphaned packages, leaving the apt cache
-    alone. 
-
     up --help = shows this help page.
 
  By Joe Collins www.ezeelinux.com (GNU/General Public License version 2.0)
+ Stolen by Bendahon
  
  Disclaimer:
 
