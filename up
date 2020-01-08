@@ -8,6 +8,8 @@
 #
 # ...And way we go!
 
+# Edited by Bendahon 08-01-2020 just to make it easy for me
+# -----------------------------------------------------------------
 # Check for less utility and install if needed:
 
 dpkg -l | grep -qw less || sudo apt install less -yyq
@@ -18,35 +20,26 @@ set -e
 
 # Functions:
 
-update() {
-
+update() 
+{
 echo "Starting full system update..."
 sudo apt update
 sudo apt full-upgrade -yy
-
-}
-
-clean() {
-
-echo "Removing apt cache packages that can no longer be downloaded..."
 sudo apt autoclean
-
 }
 
-remove() {
-
-echo "Removing orpahned packages..."
+remove() 
+{
+echo "Removing orphaned packages..."
 sudo apt autoremove -yy
-
 }
 
-leave() {
-
+leave() 
+{
 echo "--------------------"
 echo "- Update Complete! -"
 echo "--------------------"
 exit
-
 }
 
 up_help() {
@@ -101,18 +94,8 @@ _EOF_
 
 # Tell 'em who we are...
 
-echo "Up -- Debian/Ubuntu Update Tool (Version 1.2)"
+echo "Up -- Debian/Ubuntu Update Tool (Version 1.2) -- Modified by Bendahon 2020"
 
-# Update and clean:
-
-if [ "$1" == "--clean" ]; then
-    update
-    remove
-    clean
-    leave
-fi
-
-# Update and remove orphaned packages:
 
 if [ "$1" == "--remove" ]; then
     update
