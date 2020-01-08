@@ -24,7 +24,9 @@ set -e
 
 update() 
 {
+echo "------------------------------"
 echo "Starting full system update..."
+echo "------------------------------"
 sudo apt update
 sudo apt full-upgrade -yy
 sudo apt autoclean
@@ -32,7 +34,9 @@ sudo apt autoclean
 
 remove() 
 {
+echo "-----------------------------"
 echo "Removing orphaned packages..."
+echo "-----------------------------"
 sudo apt autoremove -yy
 }
 
@@ -56,9 +60,7 @@ less << _EOF_
  Press "q" to exit this Help page.
 
  Commands:
-    up = full system update.
-    
-    Running "up" with no options will update the apt cache and then perform a
+    Running up with no options will update the apt cache and then perform a
     full distribution update automatically.
     
     The "--remove" option only removes orphaned packages, leaving the apt cache
@@ -90,8 +92,9 @@ _EOF_
 # Tell 'em who we are...
 # -----------------------------------------------------------------
 
+echo "--------------------------------------------------------------------------"
 echo "Up -- Debian/Ubuntu Update Tool (Version 1.2) -- Modified by Bendahon 2020"
-
+echo "--------------------------------------------------------------------------"
 
 if [ "$1" == "--remove" ]; then
     update
